@@ -1,0 +1,398 @@
+{
+	"name": "Sprinkler",
+	"home": "http://wiki.bitplan.com/index.php/Sprinkler",
+	"feedback": "https://github.com/BITPlan/com.bitplan.sprinkler/issues",
+	"help": "http://wiki.bitplan.com/index.php/Sprinkler/Help",
+	"groups": [
+		{
+			"title": "Sprinkler",
+			"icon": "watering_can",
+			"forms": [
+				{
+					"title": "Sprinkle",
+					"icon": "on_off",
+					"readOnly": "true",
+					"fields": [
+						{
+							"title": "on",
+							"type": "Boolean"
+						}
+					]
+				}
+			]
+		},
+		{
+			"title": "Weather",
+			"icon": "cloud",
+			"forms": [	
+				{
+					"title": "WeatherForecast",
+					"icon": "hand_alt_right",
+					"readOnly": "true",
+					"fields": [
+						{
+							"title": "WeatherForecast",
+							"fieldKind": "Plot"
+						}
+					]
+				},
+				{
+					"title": "CurrentWeather",
+					"icon": "eye",
+					"readOnly": "true",
+					"fields": [
+						{
+							"title": "CurrentWeather",
+							"fieldKind": "Plot"
+						}
+					]
+				},
+				{
+					"title": "WeatherHistory",
+					"readOnly": "true",
+					"icon": "history",
+					"fields": [
+						{
+							"title": "WeatherHistory",
+							"fieldKind": "Plot"
+						}
+					]
+				}
+			]
+		},
+		{
+			"title": "Preferences",
+			"icon": "cogs",
+			"forms": [
+			{
+					"title": "Location",
+					"icon": "map_marker",
+					"headerText": "Location",
+					"fields": [
+						{
+							"title": "name",
+							"format": "%s",
+							"labelSize": 10,
+							"fieldSize": 40
+						},
+						{
+							"title": "country",
+							"format": "%s",
+							"labelSize": 10,
+							"fieldSize": 40
+						},
+						{
+							"title": "lat",
+							"format": "%s",
+							"labelSize": 10,
+							"fieldSize": 30
+						},
+						{
+							"title": "lon",
+							"format": "%s",
+							"labelSize": 10,
+							"fieldSize": 30
+						},
+						{
+							"title": "id",
+							"format": "%8d",
+							"labelSize": 10,
+							"fieldSize": 8,
+							"hint": "openweathermap.org id of location - will be looked up",
+							"type": "Long"
+						},
+						{
+							"title": "dwdid",
+							"format": "%8d",
+							"labelSize": 10,
+							"fieldSize": 8,
+							"hint": "Deutscher Wetterdienst id of location - will be looked up"
+						},
+						{
+							"title": "dwdStation",
+							"labelSize": 15,
+							"fieldSize": 70,
+							"hint": "DWD Station"
+						}
+					]
+				},
+				{
+					"title": "Settings",
+					"icon": "tint",
+					"headerText": "choose your sprinkler area settings",
+					"fields": [
+						{
+							"title": "soilType",
+							"hint": "type of Soil",
+							"format": "%s",
+							"type": "Choice",
+							"choices": "Sand,Silt,Clay"
+						},
+						{
+							"title": "mmPerHour",
+							"hint": "rain equivalent of mm per Hour the sprinkler can apply",
+							"type": "Double",
+							"fieldSize": 5,
+							"format": "%5.1f",
+							"labelSize": 20
+						},
+						{
+							"title": "areaSizeSquareMeter",
+							"hint": "size of the area to be sprinkled in square meters",
+							"type": "Integer",
+							"fieldSize": 5,
+							"format": "%3d",
+							"labelSize": 20
+						},
+						{
+							"title": "earliestSprinkleHour",
+							"hint": "earliest time to sprinkle e.g. 6:30",
+							"format": "%s",
+							"fieldSize": 6,
+							"labelSize": 20
+						},
+						{
+							"title": "latestSprinkleHour",
+							"hint": "latest time to sprinkle e.g. 20:30",
+							"format": "%s",
+							"labelSize": 20,
+							"fieldSize": 6
+						},
+						{
+							"title": "pumpPower",
+							"hint": "power of Pump/Watt",
+							"format": "%5.0f",
+							"labelSize": 20,
+							"fieldSize": 13,
+							"type": "Double"
+						},
+						{
+							"title": "waterPrice",
+							"hint": "price of water per m³",
+							"format": "%10.2f",
+							"labelSize": 20,
+							"fieldSize": 13,
+							"type": "Double"
+						},
+						{
+							"title": "energyPrice",
+							"hint": "price of energy per kWh",
+							"format": "%10.2f",
+							"labelSize": 20,
+							"fieldSize": 13,
+							"type": "Double"
+						},
+						{
+							"title": "currency",
+							"hint": "the currency for your prices",
+							"format": "%s",
+							"labelSize": 20,
+							"fieldSize": 2
+						},
+						{
+							"title": "appid",
+							"format": "%s",
+							"labelSize": 10,
+							"fieldSize": 40,
+							"type": "Password",
+					    "hint": "openweathermap appid"
+						}
+			    ]
+				},
+				{
+					"title": "Preferences",
+					"icon": "preferences",
+					"headerText": "choose your Preferences",
+					"fields": [
+						{
+							"title": "language",
+							"hint": "the language of your choice",
+							"format": "%s",
+							"type": "Choice",
+							"choices": "en,de"
+						},
+						{
+							"title": "screenPercent",
+							"label": "% of Screen",
+							"hint": "percentage of display to be used 100=Fullscreen",
+							"format": "%s",
+							"type": "Integer"
+						},
+						{
+							"title": "debug",
+							"hint": "output debugging information for the application",
+							"format": "%s",
+							"type": "Boolean"
+						},
+						{
+							"title": "autoStart",
+							"hint": "automatically start OBD reading on start of application",
+							"format": "%s",
+							"type": "Boolean"
+						},
+						{
+							"title": "logPrefix",
+							"hint": "the prefix to use for logfiles",
+							"format": "%s"
+						},
+						{
+							"title": "logDirectory",
+							"hint": "the directory in which to store logfiles",
+							"format": "%s",
+							"type": "Directory",
+							"fieldSize": 60
+						},
+						{
+							"title": "screenShotDirectory",
+							"hint": "the directory in which to store screenShots",
+							"format": "%s",
+							"type": "Directory",
+							"fieldSize": 60
+						}
+					]
+				},
+				{
+					"title": "FritzBox",
+					"icon": "plug",
+					"headerText": "FritzBox details",
+					"fields": [
+						{
+							"title": "url",
+							"format": "%s",
+							"labelSize": 10,
+							"fieldSize": 40
+						},
+						{
+							"title": "username",
+							"format": "%s",
+							"labelSize": 10,
+							"fieldSize": 40
+						},
+						{
+							"title": "password",
+							"format": "%s",
+							"labelSize": 10,
+							"fieldSize": 40,
+							"type": "Password"
+						},
+						{
+							"title": "password2",
+							"format": "%s",
+							"labelSize": 10,
+							"fieldSize": 40,
+							"type": "Password"
+						},
+						{
+							"title": "deviceName",
+							"format": "%s",
+							"labelSize": 10,
+							"fieldSize": 40
+						}
+					]
+				}
+			]
+		}
+	],
+	"mainMenu": {
+		"subMenus": [
+			{
+				"title": "File",
+				"shortCut": "F",
+				"menuItems": [
+					{
+						"title": "Quit",
+						"shortCut": "Q"
+					}
+				]
+			},
+			{
+				"title": "Weather",
+				"shortCut": "W",
+				"menuItems": [
+					{
+						"title": "CurrentWeather",
+						"shortCut": "C"
+					},
+					{
+						"title": "WeatherForecast",
+						"shortCut": "F"
+					},
+					{
+						"title": "WeatherHistory",
+						"shortCut": "H"
+					}
+				]
+			},
+			{
+				"title": "Settings",
+				"shortCut": "S",
+				"menuItems": [
+					{
+						"title": "SprinkleArea",
+						"shortCut": "S"
+					},
+					{
+						"title": "Preferences",
+						"shortCut": "P"
+					},
+					{
+						"title": "FritzBox",
+						"shortCut": "F"
+					}
+				]
+			},
+			{
+				"title": "Sprinkler",
+				"shortCut": "S",
+				"menuItems": [
+					{
+						"title": "Automatic",
+						"shortCut": "A"
+					},
+					{
+						"title": "Begin",
+						"shortCut": "B"
+					},
+					{
+						"title": "End",
+						"shortCut": "E"
+					}
+				]
+			},
+			{
+				"title": "Help",
+				"shortCut": "H",
+				"menuItems": [
+					{
+						"title": "About",
+						"shortCut": "A"
+					},
+					{
+						"title": "Help",
+						"shortCut": "H"
+					},
+					{
+						"title": "Feedback",
+						"shortCut": "F"
+					},
+					{
+						"title": "BugReport",
+						"shortCut": "B"
+					}
+				]
+			}
+		]
+	},
+	"exceptionHelps": [
+		{
+			"exception": "java.net.BindException:Address already in use (Bind failed)",
+			"url": "http://can4eve.bitplan.com/index.php/Help#java.net.BindException:_Address_already_in_use_.28Bind_failed.29",
+			"i18nHint": "addressAlreadyInUse"
+		},
+		{
+			"exception": "java.net.SocketException:Network is unreachable (connect failed)",
+			"url": "http://can4eve.bitplan.com/index.php/Help#java.net.SocketException:_Network_is_unreachable_.28connect_failed.29",
+			"i18nHint": "networkIsUnreachable"
+		}
+	]
+}
